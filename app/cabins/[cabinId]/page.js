@@ -1,6 +1,6 @@
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import { getCabin } from "@/app/_lib/data-service";
-
+import Image from "next/image";
 export async function generateMetadata({ params }) {
   const { name } = await getCabin(params.cabinId);
   return { title: `cabin ${name}` };
@@ -17,7 +17,14 @@ export default async function Page({ params }) {
         <div className="relative scale-[1.15] -translate-x-3">
           <img src={image} alt={`Cabin ${name}`} />
         </div>
-
+        {/* <div className="relative scale-[1.15] -translate-x-3">
+          <Image
+            fill
+            className="object-cover"
+            src={image}
+            alt={`Cabin ${name}`}
+          />
+        </div> */}
         <div>
           <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
             Cabin {name}

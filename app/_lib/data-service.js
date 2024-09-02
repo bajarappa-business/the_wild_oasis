@@ -49,11 +49,7 @@ export async function getCabinPrice(id) {
 //   return data;
 // };
 export const getCabins = async function () {
-  const { data, error } = await supabase
-    .from("cabins")
-    .select("*")
-    .order("name");
-
+  const { data, error } = await supabase.from("cabins").select("*");
   if (error) {
     console.error(error);
     throw new Error("Cabins could not be loaded");

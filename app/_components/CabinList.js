@@ -1,8 +1,9 @@
 import React from "react";
 import CabinCard from "../_components/CabinCard";
-import { getCabin, getCabins } from "../_lib/data-service";
+import { getCabins } from "../_lib/data-service";
 export default async function CabinList() {
   const cabins = await getCabins();
+  console.log(cabins);
   if (!cabins.length) return null;
 
   return (
